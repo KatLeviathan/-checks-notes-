@@ -13,6 +13,23 @@ if (window.location.pathname === '/notes') {
   newNoteBtn = document.querySelector('.new-note');
   clearBtn = document.querySelector('.clear-btn');
   noteList = document.querySelectorAll('.list-container .list-group');
+
+  // Attach event listeners
+  saveNoteBtn.addEventListener('click', handleNoteSave);
+  newNoteBtn.addEventListener('click', handleNewNoteView);
+  clearBtn.addEventListener('click', renderActiveNote);
+  noteForm.addEventListener('input', handleRenderBtns);
+
+  // Attach event listener for deleting notes
+  noteList.forEach(note => {
+    note.addEventListener('click', (e) => {
+      if (e.target.classList.contains('delete-note')) {
+        handleNoteDelete(e);
+      } else {
+        handleNoteView(e);
+      }
+    });
+  });
 }
 
 // Show an element
