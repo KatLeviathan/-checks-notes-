@@ -1,12 +1,16 @@
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Enable CORS for all origins
+app.use(cors());
+
 // Middleware to parse JSON body
 app.use(express.json());
 
-// Serve static files from 'notebook/develop/public' directory
+// Serve static files from 'develop/public' directory
 app.use(express.static(path.join(__dirname, 'develop', 'public')));
 
 // Routes
