@@ -15,11 +15,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Define routes
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'develop', 'public', 'index.html'));
 });
 
 app.get('/notes', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'notes.html'));
+  res.sendFile(path.join(__dirname, 'notes.html'));
 });
 
 // POST route for saving notes
