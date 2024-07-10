@@ -10,16 +10,16 @@ app.use(express.json()); // For parsing application/json
 // Enable CORS for all origins during development
 app.use(cors());
 
-// Serve static files from the 'notebook/develop/public' directory
-app.use(express.static(path.join(__dirname, 'notebook', 'develop', 'public')));
+// Serve static files from the 'develop/public' directory
+app.use(express.static(path.join(__dirname,  'develop', 'public')));
 
 // Define routes
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname,  'develop', 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'notebook', 'develop', 'public', 'index.html'));
 });
 
 app.get('/notes', (req, res) => {
-  res.sendFile(path.join(__dirname,  'develop', 'public', 'notes.html'));
+  res.sendFile(path.join(__dirname, 'develop', 'public', 'notes.html'));
 });
 
 // POST route for saving notes
