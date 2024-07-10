@@ -10,8 +10,8 @@ app.use(express.json()); // For parsing application/json
 // Enable CORS for all origins during development
 app.use(cors());
 
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files from the root directory
+app.use(express.static(path.join(__dirname, 'develop', 'public')));
 
 // Define routes
 app.get('/', (req, res) => {
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/notes', (req, res) => {
-  res.sendFile(path.join(__dirname, 'notes.html'));
+  res.sendFile(path.join(__dirname, 'develop', 'public', 'notes.html'));
 });
 
 // POST route for saving notes
