@@ -10,7 +10,7 @@ app.use(express.json()); // For parsing application/json
 // Enable CORS for all origins during development
 app.use(cors());
 
-// Serve static files from the root directory
+// Serve static files from the 'develop/public' directory
 app.use(express.static(path.join(__dirname, 'develop', 'public')));
 
 // Define routes
