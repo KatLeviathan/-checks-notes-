@@ -14,13 +14,14 @@ app.use(cors());
 app.use(express.static(path.join(__dirname,  'develop', 'public')));
 
 // Define routes
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'notebook', 'develop', 'public', 'index.html'));
+app.get('/notes', (req, res) => {
+  res.sendFile(path.join(__dirname,  'develop', 'public', 'index.html'));
 });
 
-app.get('/notes', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'develop', 'public', 'notes.html'));
 });
+
 
 // POST route for saving notes
 app.post('/notes', (req, res) => {
