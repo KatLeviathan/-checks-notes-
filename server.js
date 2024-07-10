@@ -11,15 +11,15 @@ app.use(express.json()); // For parsing application/json
 app.use(cors());
 
 // Serve static files from the 'develop/public' directory
-app.use(express.static(path.join(__dirname,  'develop', 'public')));
+app.use(express.static(path.join(__dirname, 'Develop', 'public')));
 
 // Define routes
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname,  'develop', 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/notes', (req, res) => {
-  res.sendFile(path.join(__dirname, 'develop', 'public', 'notes.html'));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'notes.html'));
 });
 
 
